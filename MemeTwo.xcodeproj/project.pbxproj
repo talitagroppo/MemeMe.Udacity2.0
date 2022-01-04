@@ -13,6 +13,13 @@
 		D73833DA277322EA005D7877 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73833D8277322EA005D7877 /* Main.storyboard */; };
 		D73833DC277322EC005D7877 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D73833DB277322EC005D7877 /* Assets.xcassets */; };
 		D73833DF277322EC005D7877 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73833DD277322EC005D7877 /* LaunchScreen.storyboard */; };
+		D73833E927732337005D7877 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73833E827732337005D7877 /* Meme.swift */; };
+		D73833EB2773260D005D7877 /* SetMemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73833EA2773260D005D7877 /* SetMemeTableViewCell.swift */; };
+		D73833ED27732943005D7877 /* MemeImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73833EC27732943005D7877 /* MemeImagePickerView.swift */; };
+		D73F3F042779DCFA001DC91A /* SetMemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73F3F032779DCFA001DC91A /* SetMemeCollectionViewCell.swift */; };
+		D73F3F062779DE17001DC91A /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73F3F052779DE17001DC91A /* CollectionViewController.swift */; };
+		D7A6DA0F27844264000CDA55 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6DA0E27844264000CDA55 /* DetailViewController.swift */; };
+		D7A6DA13278447F3000CDA55 /* MemeStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6DA12278447F3000CDA55 /* MemeStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		D73833DB277322EC005D7877 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D73833DE277322EC005D7877 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D73833E0277322EC005D7877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D73833E827732337005D7877 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		D73833EA2773260D005D7877 /* SetMemeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMemeTableViewCell.swift; sourceTree = "<group>"; };
+		D73833EC27732943005D7877 /* MemeImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeImagePickerView.swift; sourceTree = "<group>"; };
+		D73F3F032779DCFA001DC91A /* SetMemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMemeCollectionViewCell.swift; sourceTree = "<group>"; };
+		D73F3F052779DE17001DC91A /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		D7A6DA0E27844264000CDA55 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D7A6DA12278447F3000CDA55 /* MemeStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +70,38 @@
 		D73833D1277322EA005D7877 /* MemeTwo */ = {
 			isa = PBXGroup;
 			children = (
+				D73833E627732317005D7877 /* core */,
 				D73833D2277322EA005D7877 /* AppDelegate.swift */,
 				D73833D4277322EA005D7877 /* SceneDelegate.swift */,
 				D73833D6277322EA005D7877 /* ViewController.swift */,
+				D73F3F052779DE17001DC91A /* CollectionViewController.swift */,
+				D73833EC27732943005D7877 /* MemeImagePickerView.swift */,
 				D73833D8277322EA005D7877 /* Main.storyboard */,
+				D73833EA2773260D005D7877 /* SetMemeTableViewCell.swift */,
+				D73F3F032779DCFA001DC91A /* SetMemeCollectionViewCell.swift */,
 				D73833DB277322EC005D7877 /* Assets.xcassets */,
 				D73833DD277322EC005D7877 /* LaunchScreen.storyboard */,
 				D73833E0277322EC005D7877 /* Info.plist */,
+				D7A6DA0E27844264000CDA55 /* DetailViewController.swift */,
+				D7A6DA12278447F3000CDA55 /* MemeStorage.swift */,
 			);
 			path = MemeTwo;
+			sourceTree = "<group>";
+		};
+		D73833E627732317005D7877 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				D73833E72773231E005D7877 /* entity */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		D73833E72773231E005D7877 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				D73833E827732337005D7877 /* Meme.swift */,
+			);
+			path = entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +175,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7A6DA0F27844264000CDA55 /* DetailViewController.swift in Sources */,
 				D73833D7277322EA005D7877 /* ViewController.swift in Sources */,
+				D73833E927732337005D7877 /* Meme.swift in Sources */,
+				D73833EB2773260D005D7877 /* SetMemeTableViewCell.swift in Sources */,
+				D73F3F042779DCFA001DC91A /* SetMemeCollectionViewCell.swift in Sources */,
+				D73F3F062779DE17001DC91A /* CollectionViewController.swift in Sources */,
 				D73833D3277322EA005D7877 /* AppDelegate.swift in Sources */,
+				D7A6DA13278447F3000CDA55 /* MemeStorage.swift in Sources */,
+				D73833ED27732943005D7877 /* MemeImagePickerView.swift in Sources */,
 				D73833D5277322EA005D7877 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,7 +261,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -272,7 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
