@@ -11,6 +11,8 @@ class DetailViewController: UIViewController {
     static let identifier = "DetailViewController"
 
     @IBOutlet var memeImageView: UIImageView!
+    @IBOutlet var topLabel: UILabel!
+    @IBOutlet var bottomLabel: UILabel!
     
     var meme: Meme?
     

@@ -15,9 +15,9 @@ class MemeImagePickerView: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var imagePicker: UIImageView!
     @IBOutlet weak var album: UIBarButtonItem!
     @IBOutlet weak var camera: UIBarButtonItem!
-    @IBOutlet weak var topBarButton: UIToolbar!
     @IBOutlet weak var bottomBarButton: UIToolbar!
     @IBOutlet weak var bottomText: UITextField!
+    @IBOutlet var senderImage: UIBarButtonItem!
     @IBOutlet weak var topText: UITextField!
     
     let storage = MemeStorage()
@@ -30,8 +30,10 @@ class MemeImagePickerView: UIViewController, UIImagePickerControllerDelegate, UI
         super.viewDidLoad()
         navigationController?.tabBarController?.tabBar.isHidden = true
         camera.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        senderImage.isEnabled = false
         textFields()
     }
+    
     @IBAction func senderImage(_ sender: UIBarButtonItem) {
         let showImage = generateMemedImage()
         guard let image = imagePicker.image else { return }
@@ -58,8 +60,8 @@ class MemeImagePickerView: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     @IBAction func saveImage(_ sender: UIImage) {
-        let imageToSave = imagePicker.image
-        let data = imageToSave?.jpegData(compressionQuality: 0.5)
+        let imageToSave = generateMemedImage()
+        let data = imageToSave.jpegData(compressionQuality: 0.5)
         let filename = "\(UUID()).jpg"
         let path = getDirectory().appendingPathComponent(filename)
         do {
@@ -70,9 +72,11 @@ class MemeImagePickerView: UIViewController, UIImagePickerControllerDelegate, UI
             print(error.localizedDescription)
         }
         navigationController?.popViewController(animated: true)
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        senderImage.isEnabled = true
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imagePicker.image = image
         }
@@ -104,7 +108,6 @@ class MemeImagePickerView: UIViewController, UIImagePickerControllerDelegate, UI
         return paths[0]
     }
     func isHide(_ isHideBottom: Bool){
-        topBarButton.isHidden = isHideBottom
         bottomBarButton.isHidden = isHideBottom
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {

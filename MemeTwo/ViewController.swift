@@ -37,6 +37,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewWillAppear(animated)
         allMemes = storage.load()
         tableView.reloadData()
+        navigationController?.tabBarController?.tabBar.isHidden = false
     }
 }
 
@@ -48,8 +49,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ViewController.cellIdentifier, for: indexPath) as! SetMemeTableViewCell
         let meme = allMemes[indexPath.row]
-        cell.memeTop.text = meme.top
-        cell.memeBottom.text = meme.bottom
+        cell.memeTop.text = ("\(meme.top)...\(meme.bottom)")
+//        cell.memeBottom.text = meme.bottom
         let url = getDirectory().appendingPathComponent(meme.imagePath)
         if let data = try? Data(contentsOf: url) {
             guard let image = UIImage(data: data) else {
