@@ -13,14 +13,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBOutlet var tableView: UITableView!
     
-    @IBOutlet weak var plusButton: UIBarButtonItem!
-    
-    @IBAction func plusButton(_ sender: UIBarButtonItem) {
+    @IBAction func Add(_ sender: UIBarButtonItem) {
         let vc = storyboard?.instantiateViewController(withIdentifier: MemeImagePickerView.identifier) as! MemeImagePickerView
 //        vc.allMemes = allMemes
         navigationController?.pushViewController(vc, animated: true)
     }
-    
     let storage = MemeStorage()
     
     lazy var allMemes: [Meme] = {
@@ -37,7 +34,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewWillAppear(animated)
         allMemes = storage.load()
         tableView.reloadData()
-        navigationController?.tabBarController?.tabBar.isHidden = false
     }
 }
 

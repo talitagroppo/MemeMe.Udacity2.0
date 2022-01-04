@@ -15,6 +15,12 @@ class CollectionViewController: UICollectionViewController, UIImagePickerControl
     
     @IBOutlet var flowLayout: UICollectionViewFlowLayout!
     
+    @IBAction func Add(_ sender: UIBarButtonItem) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: MemeImagePickerView.identifier) as! MemeImagePickerView
+//        vc.allMemes = allMemes
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
     let storage = MemeStorage()
     
     lazy var allMemes: [Meme] = {

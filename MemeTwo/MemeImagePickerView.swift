@@ -72,7 +72,7 @@ class MemeImagePickerView: UIViewController, UIImagePickerControllerDelegate, UI
             print(error.localizedDescription)
         }
         navigationController?.popViewController(animated: true)
-        
+        navigationController?.tabBarController?.tabBar.isHidden = false
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
