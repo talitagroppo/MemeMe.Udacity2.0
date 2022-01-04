@@ -164,15 +164,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="28k-QE-hQt">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="jCi-r9-JJL">
+                            <connections>
+                                <action selector="cancelEvent:" destination="Esd-Ft-VgK" id="qi4-8W-Lw5"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem image="square.and.arrow.up" catalog="system" id="zpR-wq-IXG" userLabel="sender">
-                                <connections>
-                                    <action selector="senderImage:" destination="Esd-Ft-VgK" id="KZ3-4k-gft"/>
-                                </connections>
-                            </barButtonItem>
                             <barButtonItem systemItem="done" id="rX8-yl-zce" userLabel="save">
                                 <connections>
                                     <action selector="saveImage:" destination="Esd-Ft-VgK" id="kkl-dg-Bqk"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="square.and.arrow.up" catalog="system" id="zpR-wq-IXG" userLabel="sender">
+                                <connections>
+                                    <action selector="senderImage:" destination="Esd-Ft-VgK" id="KZ3-4k-gft"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>

@@ -33,7 +33,10 @@ class MemeImagePickerView: UIViewController, UIImagePickerControllerDelegate, UI
         senderImage.isEnabled = false
         textFields()
     }
-    
+    @IBAction func cancelEvent(_ sender: UIBarButtonItem){
+        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
+    }
     @IBAction func senderImage(_ sender: UIBarButtonItem) {
         let showImage = generateMemedImage()
         guard let image = imagePicker.image else { return }
